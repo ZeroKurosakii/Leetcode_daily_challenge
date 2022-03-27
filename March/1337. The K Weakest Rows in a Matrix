@@ -1,0 +1,28 @@
+//Author : ZeroKurosakii
+//張竣傑 @ National Yang Ming Chiao Tung University dep.civil engineering
+//Coding on 2022/3/27
+
+class Solution {
+public:
+    vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
+        // count thee length of the matrix
+        int leng = mat.size();
+        // use set to automatically sort the matrix
+        set<pair<int , int> > v;
+        for(int i = 0 ; i < leng  ; i++){
+            // use count to calculate the number of 1 in each row
+            int tmp = count(mat[i].begin() , mat[i].end() , 1);
+            v.insert({tmp , i});
+        }
+        vector<int> ans;
+        // use iterator to pushback the element to the vector
+        for(auto it : v){
+            if(k == 0){
+                break;
+            }
+            ans.push_back(it.second) ;
+            k--;
+        }
+        return ans;
+    }
+};
