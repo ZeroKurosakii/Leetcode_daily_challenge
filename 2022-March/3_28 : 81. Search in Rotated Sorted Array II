@@ -1,0 +1,15 @@
+//Author : ZeroKurosakii
+//張竣傑 @ National Yang Ming Chiao Tung University dep.civil engineering
+//Coding on 2022/3/28
+
+class Solution {
+public:
+    bool search(vector<int>& nums, int target) {
+        //sort(nums.begin() , nums.end());
+        int tmp = count(nums.begin() , nums.end() , target);
+        if(tmp >= 1){
+            return true;
+        }
+        return false;
+    }
+};
